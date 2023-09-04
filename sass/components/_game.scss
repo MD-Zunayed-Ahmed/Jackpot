@@ -1,0 +1,111 @@
+@import '../mixins/mixin.scss';
+@import '../variables/variable';
+
+/*=========================================================================================================
+                                                game part start
+===========================================================================================================*/
+#game {
+    padding: 170px 0 100px;
+    background: #0b001b;
+
+    .rel {
+        position: relative;
+
+        .reddy {
+            position: absolute;
+            top: -270px;
+            left: 0;
+            width: 100%;
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+            background: #6418d1;
+            border-bottom: 1px solid #490ea1;
+
+            .game_text {
+                padding: 30px 43px 35px;
+                box-shadow: 10px 0 50px 0 rgba(31, 7, 67, 0.5);
+                background: linear-gradient(left bottom, #9e4efc 0%, #570dc8 100%);
+
+                h2 {
+                    @include fs(#fdb803, 50px, 400, $anton);
+                    margin-bottom: 20px;
+                    @include head;
+                }
+
+                h3 {
+                    @include fs(#fff, 32px, 400, $anton);
+                    margin-bottom: 10px;
+                    text-shadow: 4px 4px 0px #5813b8 !important;
+                }
+
+                p {
+                    @include fs(#fff, 16px, 400, $nouito);
+                }
+            }
+        }
+
+        .game_head {
+            span {
+                @include fs(#ffdc28, 48px, 400, $anton);
+                color: #fdb125;
+                @include head;
+            }
+        }
+
+        .play {
+            padding-top: 45px;
+
+            .play_img {
+                position: relative;
+
+                &:hover {
+                    .overly {
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            .overly {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(21, 0, 53, 0.7);
+                transform: scale(0);
+                transition: all linear .3s;
+
+                h4 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include fs(#fff, 24px, 400, $anton);
+                }
+
+                a {
+                    position: absolute;
+                    top: 75%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include fs(#fff, 24px, 400, $anton);
+                    @include button_blue;
+                    padding: 10px 30px;
+                    border-radius: 5px;
+                    box-shadow: 0 6px 0 0 rgba(58, 0, 144, 0.589);
+                    text-shadow: 4px 4px 0px #5813b8 !important;
+
+                    &:hover {
+                        background: $hover;
+                        box-shadow: 0 6px 0 0 #661355;
+                        @include button;
+                        text-shadow: 4px 4px 0px #a60084 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=========================================================================================================
+                                                game part end
+===========================================================================================================*/
